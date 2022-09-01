@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  http_test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: http_test:latest
+    restart: always
+    container_name: http_test
+    hostname: http_test
+    privileged: true
+    networks:
+      - wjl
+    # environment:
+      # 从命令行中读取 VERSE_ACTIVE=develop docker-compose -p default up -d verseland-go
+      # VERSE_ACTIVE: ${VERSE_ACTIVE}
+    volumes:
+      - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro
+
+networks:
+  wjl:
+    driver: bridge
