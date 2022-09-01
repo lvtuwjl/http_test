@@ -16,7 +16,7 @@ func main() {
 	r.GET("", func(ctx *gin.Context) {
 		log.Println("connectivity test")
 		ctx.JSON(http.StatusOK, gin.H{
-			"message": "Welcome to you!",
+			"message": "Welcome to baby!",
 		})
 	})
 
