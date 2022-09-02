@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    ports:
+      - "8877:8877"
     image: http_test:latest
     restart: always
     container_name: http_test
